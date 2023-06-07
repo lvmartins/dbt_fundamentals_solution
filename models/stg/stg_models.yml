@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: Table with information about the users from our company with apllied naming convention to columns
+    columns: 
+      - name: UserId
+        description: This is the primary key of the users table
+        tests:
+          - unique
+          - not_null
+  - name: stg_products
+    description: Table with information about the products we sell with apllied naming convention
+    columns: 
+      - name: ProductId
+        description: This is the primary key of the products table
+        tests:
+          - unique
+          - not_null
+  - name: stg_orders
+    description: Orders table with apllied naming convention.
+    columns: 
+      - name: OrderId
+        description: This is the primary key of the orders table - Order identifier
+        tests:
+          - unique
+          - not_null
+  - name: stg_order_items
+    description: Order Items table with apllied naming convention. Contains info about the items in each order.
+    columns: 
+      - name: OrderItemId
+        description: This is the primary key of the order items table - Order Item Identifier
+        tests:
+          - unique
+          - not_null

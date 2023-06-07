@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: RAW
+    schema: dbt_fundamentals_raw
+    tables:
+      - name: users
+        description: Table with information about the users - RAW
+        columns: 
+          - name: id
+            description: This is the primary key of the users table
+            tests:
+              - unique
+              - not_null
+      - name: products
+        description: Products table - RAW
+        columns: 
+          - name: id
+            description: This is the primary key of the products table
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: Orders table with information regarding date information about orders
+        columns: 
+          - name: id
+            description: This is the primary key of the orders table - Order identifier
+            tests:
+              - unique
+              - not_null
+      - name: order_items
+        description: Order items table where you can find the relevante information about the user, products in the order and so on
+        columns: 
+          - name: id
+            description: This is the primary key of the order items table - Order Item Identifier
+            tests:
+              - unique
+              - not_null

@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: Table with information about the users from our company ready for analysis
+    columns: 
+      - name: UserId
+        description: This is the primary key of the users table
+        tests:
+          - unique:
+              config:
+                store_failures: true
+          - not_null:
+              config:
+                store_failures: true
+          
+  - name: dim_products
+    description: Table with information about the products we sell ready for analysis
+    columns: 
+      - name: ProductId
+        description: This is the primary key of the products table
+        tests:
+          - unique:
+              config:
+                store_failures: true
+          - not_null:
+              config:
+                store_failures: true
