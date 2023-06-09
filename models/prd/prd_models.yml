@@ -26,3 +26,26 @@ models:
           - not_null:
               config:
                 store_failures: true
+
+  - name: fct_orders
+    description: Table with information about the order and metrics calculated
+    columns: 
+      - name: OrderItemId
+        description: This is the primary key of the Orders table
+        tests:
+          - unique:
+              config:
+                store_failures: true
+          - not_null:
+              config:
+                store_failures: true
+      - name: Status
+        description: Status of the order
+        tests:
+          - accepted_values:
+              values:
+                - Shipped
+                - Cancelled
+                - Processing
+                - Complete
+                - Returned
